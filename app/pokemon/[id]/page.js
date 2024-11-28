@@ -192,7 +192,7 @@ export default function PokemonDetail({ params }) {
                   {weaknesses.map((weakness) => (
                     <div
                       key={weakness}
-                      className="bg-gray-300 text-black rounded-full px-3 py-1 text-sm font-semibold capitalize"
+                      className="bg-gray-800 text-white rounded-full px-3 py-1 text-sm font-semibold capitalize"
                       aria-label={`Weakness: ${weakness}`}
                     >
                       {weakness}
@@ -207,7 +207,7 @@ export default function PokemonDetail({ params }) {
                 {ability ? (
                   <>
                     <p className="font-bold capitalize">{ability.name}</p>
-                    <p>{ability.effect_entries?.find((entry) => entry.language.name === "en")?.effect || "No description available."}</p>
+                    <p className="italic">{ability.effect_entries?.find((entry) => entry.language.name === "en")?.effect || "No description available."}</p>
                   </>
                 ) : (
                   <p>Loading ability...</p>
