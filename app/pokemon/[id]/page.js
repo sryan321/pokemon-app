@@ -6,8 +6,9 @@ import Link from "next/link";
 export default function PokemonDetail({ params }) {
   const [pokemon, setPokemon] = useState(null);
   const [description, setDescription] = useState("");
-  const [ability, setAbility] = useState(null); // To store the ability data
-  const [loading, setLoading] = useState(true); // Loading state
+  const [ability, setAbility] = useState(null);
+  const [weaknesses, setWeaknesses] = useState([]);  // State for weaknesses
+  const [loading, setLoading] = useState(true);
   const [id, setId] = useState(null);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ export default function PokemonDetail({ params }) {
 
     // Fetch Pokémon details and species description
     async function fetchPokemon() {
-      setLoading(true); // Start loading
+      setLoading(true);
       try {
         // Fetch Pokémon details
         const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
@@ -54,15 +55,40 @@ export default function PokemonDetail({ params }) {
           const abilityData = await abilityResponse.json();
           setAbility(abilityData);
         }
+
+        // Fetch weaknesses based on types
+        const fetchedWeaknesses = await getWeaknessesFromTypes(data.types);
+        setWeaknesses(fetchedWeaknesses);
       } catch (error) {
         console.error("Error fetching Pokémon data:", error);
       } finally {
-        setLoading(false); // Stop loading
+        setLoading(false);
       }
     }
 
     fetchPokemon();
   }, [id]);
+
+  // Function to fetch weaknesses based on types
+  const getWeaknessesFromTypes = async (types) => {
+    const weaknesses = [];
+
+    // Loop through each type and fetch its damage relations
+    for (const type of types) {
+      const response = await fetch(type.type.url);
+      const typeData = await response.json();
+
+      // Get weaknesses from 'damage_relations'
+      const typeWeaknesses = typeData.damage_relations.double_damage_from;
+      typeWeaknesses.forEach((weakness) => {
+        if (!weaknesses.includes(weakness.name)) {
+          weaknesses.push(weakness.name);
+        }
+      });
+    }
+
+    return weaknesses;
+  };
 
   // Display loading spinner
   if (loading)
@@ -159,13 +185,15 @@ export default function PokemonDetail({ params }) {
                     </div>
                   ))}
                 </div>
-                <h3 className="text-xl font-bold mt-6 mb-4">Weaknessess</h3>
-                <div className="flex gap-2 mt-2 mb-12">
-                  {/* Replace these with dynamic weaknesses as needed */}
-                  {["fire", "water", "electric"].map((weakness) => (
+
+                <h3 className="text-xl font-bold mt-6 mb-4">Weaknesses</h3>
+                <div className="flex flex-wrap gap-2 mt-2 mb-12">
+                
+                  {weaknesses.map((weakness) => (
                     <div
                       key={weakness}
-                      className="bg-gray-800 text-white rounded-full px-3 py-1 text-sm font-semibold capitalize"
+                      className="bg-gray-300 text-black rounded-full px-3 py-1 text-sm font-semibold capitalize"
+                      aria-label={`Weakness: ${weakness}`}
                     >
                       {weakness}
                     </div>
