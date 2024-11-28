@@ -15,13 +15,13 @@ node -v
 
 Clone this repository to your local machine:
 
-git clone https://github.com/yourusername/pokemon-browser.git
+git clone https://github.com/sryan321/pokemon-app.git
 
 Navigate to the project directory:
 
 cd pokemon-browser
 
-Install dependencies:
+Install dependencies (you may need admin/root privileges for this):
 
 npm install
 
