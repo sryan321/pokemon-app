@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Pokémon Browser
 
-## Getting Started
+A Pokémon browser built with [Next.js](https://nextjs.org/), allowing users to search, view and explore Pokémon details.
 
-First, run the development server:
+## Setup and Run
 
-```bash
+Follow these instructions to set up and run the Pokémon Browser app locally.
+
+### Prerequisites
+
+Ensure you have [Node.js](https://nodejs.org/) installed on your machine. You can check if Node.js is installed by running the following in your terminal (powershell/bash/etc):
+node -v
+
+### Installation
+
+Clone this repository to your local machine:
+
+git clone https://github.com/sryan321/pokemon-app.git
+
+Navigate to the project directory:
+
+cd pokemon-browser
+
+Install dependencies (you may need admin/root privileges for this):
+
+npm install
+
+### Running the Application
+
+Once the dependencies are installed, run the app using:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app will start running at http://localhost:3000. You can view it in your browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Building for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+To build the app for production:
 
-## Learn More
+npm run build
 
-To learn more about Next.js, take a look at the following resources:
+To start the production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+npm start
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
