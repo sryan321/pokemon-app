@@ -1,6 +1,6 @@
 # Pokémon Browser
 
-A Pokémon browser built with [Next.js](https://nextjs.org/), allowing users to search, view, and explore Pokémon details.
+A Pokémon browser built with [Next.js](https://nextjs.org/), allowing users to search, view and explore Pokémon details.
 
 ## Setup and Run
 
