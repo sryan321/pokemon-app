@@ -45,7 +45,7 @@ export default function Home() {
   );
 
   return (
-    <div className="container">
+    <div>
       {/* Header - Landing Section */}
       <header className="text-center my-8">
         <h1 className="text-4xl font-bold">Pokémon Browser</h1>
