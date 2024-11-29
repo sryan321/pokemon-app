@@ -9,6 +9,7 @@ Follow these instructions to set up and run the Pokémon Browser app locally.
 ### Prerequisites
 
 Ensure you have [Node.js](https://nodejs.org/) installed on your machine. You can check if Node.js is installed by running the following in your terminal (powershell/bash/etc):
+    
     node -v
 
 ### Installation
