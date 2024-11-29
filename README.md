@@ -15,21 +15,21 @@ Ensure you have [Node.js](https://nodejs.org/) installed on your machine. You ca
 
 Clone this repository to your local machine:
 
-  git clone https://github.com/sryan321/pokemon-app.git
+    git clone https://github.com/sryan321/pokemon-app.git
 
 Navigate to the project directory:
 
-  cd pokemon-browser
+    cd pokemon-browser
 
 Install dependencies (you may need admin/root privileges for this):
 
-  npm install
+    npm install
 
 ### Running the Application
 
 Once the dependencies are installed, run the app using:
 
-  npm run dev
+    npm run dev
 
 The app will start running at http://localhost:3000. You can view it in your browser.
 
@@ -37,10 +37,10 @@ The app will start running at http://localhost:3000. You can view it in your bro
 
 To build the app for production:
 
-  npm run build
+    npm run build
 
 To start the production server:
 
-  npm start
+    npm start
 
 
